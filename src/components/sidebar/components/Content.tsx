@@ -64,11 +64,11 @@ function SidebarContent(props: SidebarContent) {
       px="20px"
     >
       <Brand />
-      <Stack direction="column" mb="auto" mt="8px">
-        <Box ps="0px" pe={{ md: '0px', '2xl': '0px' }}>
-          <Links routes={routes} />
-        </Box>
-      </Stack>
+      {/*<Stack direction="column" mb="auto" mt="8px">*/}
+      {/*  <Box ps="0px" pe={{ md: '0px', '2xl': '0px' }}>*/}
+      {/*    <Links routes={routes} />*/}
+      {/*  </Box>*/}
+      {/*</Stack>*/}
 
       <Box mt="60px" width={'100%'} display={'flex'} justifyContent={'center'}>
         <SidebarCard />
