@@ -48,7 +48,7 @@ function gentesty_openBot() {
             console.log("search for input with placeholder'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'");
             gentesty_waitForElement('input', el => el.placeholder === 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx').then(input => {
                 console.log("Input field found:", input);
-                const newValue = "sk-xxxxxxxxxxxxxxx";
+                const newValue = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
                 gentesty_setNativeValue(input, newValue).then(() => {
                     console.log("search for button 'Save API Key'");
                     gentesty_waitForElement('button', el => el.textContent.trim() === 'Save API Key').then(button => {
