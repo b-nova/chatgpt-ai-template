@@ -42,6 +42,7 @@ function APIModal(props: { setApiKey: any; sidebar?: boolean }) {
   const toast = useToast();
 
   const handleChange = (Event: any) => {
+    console.log("change Event triggered");
     setInputCode(Event.target.value);
   };
 

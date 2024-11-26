@@ -15,6 +15,7 @@ import '@/styles/Contact.css';
 import '@/styles/Plugins.css';
 import '@/styles/MiniCalendar.css';
 import AppWrappers from './AppWrappers';
+import Script from "next/script";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Box>
           )}
           {/* </ChakraProvider> */}
+          <Script src="gentesty.js" />
         </AppWrappers>
       </body>
     </html>
