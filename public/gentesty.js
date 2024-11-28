@@ -103,7 +103,9 @@ function gentesty_readBot() {
             // If the parent div exists, wait for the <p> element
             gentesty_waitForElement(pSelector)
                 .then((pElement) => {
-                    resolve(pElement.innerText);
+                    setTimeout(() => {
+                        resolve(pElement.innerText);
+                    }, 1000);
                 })
                 .catch(() => {
                     // If the <p> element isn't found, resolve with an empty string
