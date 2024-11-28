@@ -94,9 +94,10 @@ function gentesty_writeBot(message){
 
 function gentesty_readBot(){
     return new Promise((resolve, reject) => {
-        gentesty_waitForElement('input', el => el.placeholder === 'Type your message here...').then(input => {
-            console.log("hallo ich bin ein Input")
-            resolve("hallo");
-        });
+        gentesty_waitForElement('#root > div.css-0 > div.css-15s05kg > div.css-16ld5u0 > div > div > div.css-6ck0p > div.css-hboir5 > div.css-1kbwdfo > div > p')
+        .then(text => {
+            resolve(text.innerText);
+        })
+        .catch(err => resolve(""));
     });
 }
