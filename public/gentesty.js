@@ -92,12 +92,27 @@ function gentesty_writeBot(message){
     });
 }
 
-function gentesty_readBot(){
-    return new Promise((resolve, reject) => {
-        gentesty_waitForElement('#root > div.css-0 > div.css-15s05kg > div.css-16ld5u0 > div > div > div.css-6ck0p > div.css-hboir5 > div.css-1kbwdfo > div > p')
-        .then(text => {
-            resolve(text.innerText);
-        })
-        .catch(err => resolve(""));
+function gentesty_readBot() {
+    return new Promise((resolve) => {
+        const parentDivSelector = '#root > div.css-0 > div.css-15s05kg > div.css-16ld5u0 > div > div > div.css-6ck0p > div.css-hboir5 > div.css-1kbwdfo';
+        const pSelector = `${parentDivSelector} > div > p`;
+
+        // Check if the parent div is present
+        const parentDiv = document.querySelector(parentDivSelector);
+        if (parentDiv) {
+            // If the parent div exists, wait for the <p> element
+            gentesty_waitForElement(pSelector)
+                .then((pElement) => {
+                    resolve(pElement.innerText);
+                })
+                .catch(() => {
+                    // If the <p> element isn't found, resolve with an empty string
+                    resolve("");
+                });
+        } else {
+            // If the parent div is not found, resolve with an empty string
+            resolve("");
+        }
     });
 }
+
